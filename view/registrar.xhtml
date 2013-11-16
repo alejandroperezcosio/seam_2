@@ -1,0 +1,77 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+    
+    <header>
+    	<title>JBoss Suites: Seam+JPA combo</title>
+    	<link href="stylesheet/screen.css" rel="stylesheet" type="text/css"/>
+    </header>
+    <body id="pgHome">
+    	<f:view>
+	    	<div id="document">
+	    		<div id="header">
+	    			<div id="title">
+	    				<img src="img/hdr.title.gif" alt="Jboss Suites" />
+	    			</div>
+	    		</div>
+	    		<div id="container">
+    				<div id="sidebar">
+   						<h1>Multi-validacion que se propaga a diferentes Capas</h1>
+   						<p>
+   							Seam integra Hibernate Validator con un conjunto de anotaciones para 
+   							expresar restricciones del modelo que se aplica transparentemente a 
+   							la capa de visita.
+   						</p>
+    				</div>
+    				<div id="content">
+    					<div class="section">
+    						<h1>Registrate</h1>
+    					</div>
+    					<div class="section">
+    						<div class="entry errors">
+								<h:messages id="msgId" globalOnly="true" />
+							</div>
+							<h:form id="registration">
+								<fieldset>
+									<s:decorate id="usrField" template="layout/edit.xhtml">
+										<ui:define name="label">Usuario</ui:define>
+										<h:inputText id="usrId" value="#{user.username}" required="true"/>
+									</s:decorate>
+									
+									<s:decorate id="realNameField" template="layout/edit.xhtml">
+										<ui:define name="label">Nombre completo</ui:define>
+										<h:inputText id="realNameId" value="#{user.name}" required="true"/>
+									</s:decorate>
+									
+									<s:decorate id="pwdField" template="layout/edit.xhtml">
+										<ui:define name="label">Password</ui:define>
+										<h:inputSecret id="pwdId" value="#{user.password}" required="true"/>
+									</s:decorate>
+									
+									<s:decorate id="verifyField" template="layout/edit.xhtml">
+										<ui:define name="label">Confirmar password</ui:define>
+										<h:inputSecret id="verifyId" value="" required="true"/>
+									</s:decorate>
+									<div class="buttonBox">
+										<h:commandButton value="Registrame !" action="#{register.register()}"/>
+										&#160;
+										<s:button id="cancel" value="Cancelar" view="/home.xhtml"></s:button>
+									</div>
+								</fieldset>
+							</h:form>
+    					</div>
+    				</div>
+	    		</div>
+	    		<div id="footer">
+	    			Creado con JBoss Seam, JSF en el curso de CCAT
+	    		</div>
+	    	</div>
+    	</f:view>
+    </body>
+</html>
+
+      

@@ -1,0 +1,74 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+    
+    <header>
+    	<title>JBoss Suites: Seam+JPA combo</title>
+    	<link href="stylesheet/screen.css" rel="stylesheet" type="text/css"/>
+    </header>
+    <body id="pgHome">
+    	<f:view>
+	    	<div id="document">
+	    		<div id="header">
+	    			<div id="title">
+	    				<img src="img/hdr.title.gif" alt="Jboss Suites" />
+	    			</div>
+	    		</div>
+	    		<div id="container">
+    				<div id="sidebar">
+   						<h:form>
+   							<fieldset>
+   								<div>
+   									<h:outputLabel id="usrLbl" value="Usuario" for="usrId"/>
+   									<h:inputText id="usrId" value="#{credentials.username}" style="width:175px;" />
+   									<div class="errors">
+										<h:message id="msgUsrId" for="usrId"/>
+									</div>
+   								</div>
+
+   								<div>
+   									<h:outputLabel id="pwdLbl" value="Clave" for="pwdId"/>
+   									<h:inputSecret id="pwdId" value="#{credentials.password}" style="width:175px;" />
+   									<div class="errors">
+	  									<h:message id="msgPwdId" for="pwdId"/>
+	  								</div>
+   								</div>
+   								
+   								<div class="errors">
+   									<h:messages id="msgId" globalOnly="true"/>
+   								</div>
+  								
+  								<div class="buttonBox">
+  									<h:commandButton id="login" value="Acceder" action="#{identity.quietLogin()}"/>
+  								</div>
+  								
+  								<div class="notes">
+  									<s:link id="registrar" value="No tienes una cuenta?" view="/registrar.xhtml"></s:link>
+  								</div>
+   							</fieldset>
+   						</h:form>
+    				</div>
+    				<div id="content">
+    					<div class="section">
+    						<h1>Acerca de este ejemplo</h1>
+    						<p>
+    							Este ejemplo demuestra que tan sencillo es el desarrollar aplicaciones 
+    							Web stateful con Seam. Solo registrese, acceda, busque el hotel de su 
+    							preferencia y haga una reservacion con su tarjeta de credito favorita.
+    						</p>
+    					</div>
+    				</div>
+	    		</div>
+	    		<div id="footer">
+	    			Creado con JBoss Seam, JSF en el curso de CCAT
+	    		</div>
+	    	</div>
+    	</f:view>
+    </body>
+</html>
+
+      
